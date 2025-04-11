@@ -14,13 +14,13 @@ import practica02.services.DatabaseServices;
 
 import jakarta.servlet.http.HttpSession;
 
-
-public class Controller {
+@Controller
+public class UserController {
 
     @Autowired
     private DatabaseServices databaseService;
 
-    private Controller() {
+    public UserController() {
     }
 
 
