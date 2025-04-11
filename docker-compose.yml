@@ -10,7 +10,7 @@ services:
       - "${MYSQLDB_DOCKER_PORT}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d
+      - ./mysql-init:/docker-entrypoint-init-db.d
 
   springboot:
     build:
@@ -29,5 +29,3 @@ services:
       - mysql
 volumes:
   mysql_data
-
-
