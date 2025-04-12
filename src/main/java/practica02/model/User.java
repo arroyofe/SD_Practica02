@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 
 /**
  *
- * Clase User: usuario que se conectará a para el login de la aplicación.
+ * Clase usuario: usuario que se conectará a para el login de la aplicación.
  *
  * @author Fernando Arroyo Redondo
  *
@@ -37,6 +37,8 @@ public class User {
     /** The lastname. */
     @Column(name = "apellidos", length = 100)
     private String lastname;
+
+    
 
     /**
      * Gets the id.
