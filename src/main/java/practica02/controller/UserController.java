@@ -67,7 +67,7 @@ public class UserController {
     @GetMapping("/profile")
     public String getProfile(Model model, HttpSession session) {
 
-        User user = databaseService.getUser((String) session.getAttribute("id"));
+        User user = databaseService.getUser((Long) session.getAttribute("id"));
 
         model.addAttribute("user", user);
 
@@ -86,7 +86,7 @@ public class UserController {
 
         databaseService.updateProfile(id, email, password, firstname, lastname);
 
-        User user = databaseService.getUser(String.valueOf(id));
+        User user = databaseService.getUser(id);
 
         model.addAttribute("user", user);
 

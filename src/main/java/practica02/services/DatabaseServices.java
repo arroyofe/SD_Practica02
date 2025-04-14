@@ -28,8 +28,8 @@ public class DatabaseServices {
             Optional<User> userOpt;
             User user = new User();
 
-            if (userRepository.existsById(String.valueOf(id))){
-                userOpt = userRepository.findById(String.valueOf(id));
+            if (userRepository.existsById(id)){
+                userOpt = userRepository.findById(id);
                 if (userOpt.isPresent()) {
                     user = userOpt.get();
 
@@ -64,7 +64,7 @@ public class DatabaseServices {
          * @param id the id
          * @return the user
          */
-        public User getUser(String id) {
+        public User getUser(Long id) {
             Optional<User> userOpt;
             User user = new User();
 

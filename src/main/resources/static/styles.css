@@ -1,6 +1,7 @@
 .escudo {
-    width: 50%;
+    width: 20%;
 }
+
 body {
     font-family: "Segoe UI", Tahoma,Verdana,Arial,sans-serif;
     background-color: azure;
@@ -11,12 +12,24 @@ header {
     background-color: blue;
     color: white;
     padding: 20px;
-    text-align: center;
+    text-align:center;
 }
 
-header h1{
-    margin: 0;
-    font-size: small;
+h1{
+
+    font-size:x-large;
+    text-align:center;
+}
+
+h2{
+
+    margin:10px;
+    font-size:large;
+
+}
+section {
+    margin: 10px;
+    font-size: large;
 
 }
 
@@ -37,7 +50,14 @@ nav ul li {
 
 nav ul li a{
     text-decoration: none;
-    color: coral;
+    color: blue;
     font-size: small;
     padding: 10px 25px;
+}
+
+footer {
+    position: absolute;
+    bottom: 5px;
+    margin: 10px;
+    font-size: small;
 }
