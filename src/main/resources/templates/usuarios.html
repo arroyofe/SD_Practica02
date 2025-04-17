@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org" lang="ES">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,0">
+  <title>Práctica de Sistemas Distribuidos</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<link rel="stylesheet" href="/static/styles.css">
+<header>
+  <img th:class="escudo" src="/static/escudo.png" alt="logo UBU" width="296" height="89">
+</header>
+<h1>
+  Lista de usuarios.</h1>
+<h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>nombre</th>
+        <th>apellidos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="usuario : ${userList}">
+        <td th:text="${usuario.id}"></td>
+        <td th:text="${usuario.nombre}"></td>
+        <td th:text="${usuario.apellidos}"></td>
+      </tr>
+    </tbody>
+
+  </table>
+</h2>
+<section>
+  <a href="home.html">Volver a la página inicial</a>
+  <link rel="stylesheet" href="/static/styles.css">
+</section>
+<footer>
+  Contacto : Fernando Arroyo Redondo
+  <p>email: far0006@alu.ubu.es</p>
+  <link rel="stylesheet" href="/static/styles.css">
+</footer>
+</body>
+</html>
