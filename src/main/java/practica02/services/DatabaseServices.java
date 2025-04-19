@@ -1,13 +1,12 @@
 package practica02.services;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import practica02.repository.UserRepository;
 import practica02.model.User;
+import practica02.repository.UserRepository;
+
+import java.util.List;
+import java.util.Optional;
 
 
 @Service

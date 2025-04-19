@@ -12,6 +12,9 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+    networks:
+      - app-network
+
   springboot:
     build: .
     container_name: springboot-app
@@ -31,5 +34,22 @@ services:
       }'
     #depends_on:
     #  - mysql
+
+    networks:
+      - app-network
+
+  python-flask-app:
+    build:
+      context: ./python-flask-app
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    networks:
+      - app-network
+
 volumes:
   mysql_data:
+
+networks:
+  app-network:
+    driver: bridge

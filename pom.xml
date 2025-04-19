@@ -13,8 +13,20 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SD_Practica02</name>
 	<description>SD_Practica02</description>
-	
-	<properties>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -68,7 +80,7 @@
 				<configuration>
 					<excludes>
 						<exclude>
-							<groupId>org.projectlombok</groupId>
+							<groupId>org.project lombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>

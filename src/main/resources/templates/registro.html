@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,0">
-    <title>Comenzar sesion</title>
+    <title>Registrar usuarios</title>
     <!--Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <Style>
@@ -20,7 +20,7 @@
             text-align: center;
             margin-bottom: 15px;
         }
-        .login-form {
+        .create-form {
             background: aquamarine;
             padding: 40px;
             border-radius: 10px;
@@ -40,9 +40,9 @@
     <img th:class="escudo" src="/static/escudo.png" alt="logo UBU" width="296" height="89">
 </header>
 <div class="container login-container">
-    <form th:action="@{/login}" method = "post" class="login-form">
-        <h1 class="form-title">Iniciar sesión</h1>
-        <p th:if="${error}" class="text-danger text-center">Usuario o clave incorrectos</p>
+    <form th:action="@{/createUser}" method = "post" class="create-form-form">
+        <h1 class="form-title">Registrar usuario</h1>
+        
         <div class="mb-3">
             <label for="username" class="form-label">Usuario</label>
             <input type="text" class="form-control" id="username" name="nombre" required/>
@@ -53,7 +53,9 @@
 
 
         </div>
-        <button type="submit" class="boton btn-block w-100">Autentificacion</button>
+		
+        <button type="submit" class="boton btn-block w-100">Crear</button>
+		
 
     </form>
 </div>
