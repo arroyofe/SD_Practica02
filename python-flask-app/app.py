@@ -2,7 +2,7 @@ from flask import Flask, render_template
 import os
 
 template_dir=os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
-template_dir=os.path.join(template_dir,'./src','./src/templates')
+template_dir=os.path.join(template_dir,'python-flask-app','templates')
 
 #Inicialización de flask
 app = Flask(__name__, template_folder= template_dir)
@@ -10,7 +10,8 @@ app = Flask(__name__, template_folder= template_dir)
 #Ruta principal
 @app.route('/')
 def home():
-    return render_template ('./src/resources/templates/registro.html')
+    return render_template ('base.html')
+
 
 if __name__=='__main__':
-    app.run(debug=True,port = 4000)
+    app.run(host='0.0.0.0',port = 4000,debug=True)

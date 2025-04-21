@@ -2,7 +2,7 @@ services:
   mysql:
     image: mysql:8.0.2
     container_name: mysql-container
-    restart: always
+    restart: unless-stopped
     env_file: ./.env
     environment:
       MYSQL_DATABASE: "${MYSQL_DATABASE}:usuarios"
@@ -11,6 +11,7 @@ services:
       - "${MYSQL_DOCKER_PORT}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
 
     networks:
       - app-network
@@ -18,13 +19,13 @@ services:
   springboot:
     build: .
     container_name: springboot-app
-    restart: always
+    restart: unless-stopped
     env_file: ./.env
     ports:
       - "${SPRING_LOCAL_PORT}:8080"
     environment:
       SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url": "jdbc:mysql://mysqldb:$$MYSQL_DOCKER_PORT/$$MYSQL_DATABASE?useSSL=false",
+        "spring.datasource.url": "jdbc:mysql://mysql:$$MYSQL_DOCKER_PORT/$$MYSQL_DATABASE?useSSL=false&allowPublicKeyRetrival=true&serverTimezone=UTC",
         "spring.datasource.username" : "$${ MYSQL_USER }",
         "spring.datasource.password": "$${ MYSQL_ROOT_PASSWORD }",
         "spring.datasource.driver-class-name":"com.mysql.cj.jdbc.Driver",
@@ -32,8 +33,8 @@ services:
         "spring.jpa.show-sql": "true",
         "spring.docker.compose.enable":"false"
       }'
-    #depends_on:
-    #  - mysql
+    depends_on:
+      - mysql
 
     networks:
       - app-network
@@ -44,6 +45,10 @@ services:
     restart: unless-stopped
     ports:
       - "4000:4000"
+    
+    #depends_on:
+    # - mysql
+    
     networks:
       - app-network
 
