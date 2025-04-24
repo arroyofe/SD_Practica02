@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http:/www.thymeleaf.org" lang="es">
+<html lang="es" xmlns:th="http:/www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,0">
+    <meta content="width=device-width, initial-scale=1,0" name="viewport">
     <title>Registrar usuarios</title>
     <!--Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,63 +11,68 @@
         body {
             background-color: beige;
         }
+
         .login-container {
             margin-top: 30px;
             display: flex;
             justify-content: center;
         }
-        .form-title{
+
+        .form-title {
             text-align: center;
             margin-bottom: 15px;
         }
+
         .create-form {
             background: aquamarine;
             padding: 40px;
             border-radius: 10px;
-            box-shadow: 0px 5px 10px rgba(0,0,0,0);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
             width: 100%;
             max-width: 400px;
         }
+
         .boton {
-            background-color: white; //Fondo
-            color: black; // Texto
-            border: azure; // borde
+            background-color: white;
+        / / Fondo color: black;
+        / / Texto border: azure;
+        / / borde
         }
     </Style>
 </head>
 <body>
 <header>
-    <img th:class="escudo" src="/static/escudo.png" alt="logo UBU" width="296" height="89">
+    <img alt="logo UBU" height="89" src="/static/escudo.png" th:class="escudo" width="296">
 </header>
 <div class="container login-container">
-    <form th:action="@{/createUser}" method = "post" class="create-form-form">
+    <form class="create-form-form" method="post" th:action="@{/createUser}">
         <h1 class="form-title">Registrar usuario</h1>
-        
+
         <div class="mb-3">
-            <label for="username" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="username" name="nombre" required/>
+            <label class="form-label" for="username">Usuario</label>
+            <input class="form-control" id="username" name="nombre" required type="text"/>
 
 
-            <label for="password" class="form-label">Clave</label>
-            <input type="password" class="form-control" id="password" name="clave" required/>
+            <label class="form-label" for="password">Clave</label>
+            <input class="form-control" id="password" name="clave" required type="password"/>
 
 
         </div>
-		
-        <button type="submit" class="boton btn-block w-100">Crear</button>
-		
+
+        <button class="boton btn-block w-100" type="submit">Crear</button>
+
 
     </form>
 </div>
 
 <section>
-		<a href="home.html">Volver a la página inicial</a>
-		<link rel="stylesheet" href="/static/styles.css">
+    <a href="home.html">Volver a la página inicial</a>
+    <link href="/static/styles.css" rel="stylesheet">
 </section>
 <footer>
     Contacto : Fernando Arroyo Redondo
     <p>email: far0006@alu.ubu.es</p>
-	<link rel="stylesheet" href="/static/styles.css">
-  </footer>
+    <link href="/static/styles.css" rel="stylesheet">
+</footer>
 </body>
 </html>

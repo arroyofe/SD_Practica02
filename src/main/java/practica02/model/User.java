@@ -3,15 +3,10 @@ package practica02.model;
 import jakarta.persistence.*;
 
 
-
-
 /**
- *
  * Clase usuario: usuario que se conectará a para el login de la aplicación.
  *
  * @author Fernando Arroyo Redondo
- *
- *
  * @version 1.0
  */
 @Entity
@@ -22,23 +17,30 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    /** The email. */
+    /**
+     * The email.
+     */
     @Column(name = "email", length = 100)
     private String email;
 
-    /** The password. */
+    /**
+     * The password.
+     */
     @Column(name = "clave", length = 100)
     private String password;
 
-    /** The firstname. */
+    /**
+     * The firstname.
+     */
     @Column(name = "nombre", length = 100)
     private String firstname;
 
-    /** The lastname. */
+    /**
+     * The lastname.
+     */
     @Column(name = "apellidos", length = 100)
     private String lastname;
 
-    
 
     /**
      * Gets the id.

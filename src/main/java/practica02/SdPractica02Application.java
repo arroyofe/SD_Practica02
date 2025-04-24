@@ -10,8 +10,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("practica02.model")
 public class SdPractica02Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SdPractica02Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SdPractica02Application.class, args);
+    }
 
 }

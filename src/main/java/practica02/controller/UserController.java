@@ -22,7 +22,6 @@ public class UserController {
     }
 
 
-
     @GetMapping("/")
     public String mainPage(HttpSession session, Model model) {
 
@@ -39,10 +38,10 @@ public class UserController {
     }
 
     @PostMapping("/checkLogin")
-    public String checkLogin(Model model,  HttpSession session, @RequestParam("id") Long id
-            ,@RequestParam("password") String password) {
+    public String checkLogin(Model model, HttpSession session, @RequestParam("id") Long id
+            , @RequestParam("password") String password) {
 
-        if (databaseService.checkRegistered(id,password)) {
+        if (databaseService.checkRegistered(id, password)) {
             session.setAttribute("id", id);
             session.setAttribute("password", password);
             model.addAttribute("logued", true);
@@ -58,7 +57,7 @@ public class UserController {
     /**
      * Devuelve una vista con el perfil de un usuario
      *
-     * @param model the model
+     * @param model   the model
      * @param session the session
      * @return profile view
      */
@@ -75,12 +74,13 @@ public class UserController {
 
     /**
      * Método getProfile.
+     *
      * @param model the model
      * @return profile view
      */
     @PostMapping("/updateProfile")
-    public String updateProfile(Model model, @RequestParam("id") long id,@RequestParam("email") String email, @RequestParam("password") String password
-            ,@RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname) {
+    public String updateProfile(Model model, @RequestParam("id") long id, @RequestParam("email") String email, @RequestParam("password") String password
+            , @RequestParam("firstname") String firstname, @RequestParam("lastname") String lastname) {
 
         databaseService.updateProfile(id, email, password, firstname, lastname);
 
@@ -95,6 +95,7 @@ public class UserController {
 
     /**
      * Método getProfile.
+     *
      * @param model the model
      * @return profile view
      */
@@ -108,8 +109,6 @@ public class UserController {
         return "showUsers";
 
     }
-
-
 
 
 }

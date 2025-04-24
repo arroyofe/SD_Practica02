@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http:/www.thymeleaf.org" lang="ES">
+<html lang="ES" xmlns:th="http:/www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,0">
-  <title>Práctica de Sistemas Distribuidos</title>
-  <link rel="stylesheet" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1,0" name="viewport">
+    <title>Práctica de Sistemas Distribuidos</title>
+    <link href="/static/styles.css" rel="stylesheet">
 </head>
 <body>
-<link rel="stylesheet" href="/static/styles.css">
+<link href="/static/styles.css" rel="stylesheet">
 <header>
-  <img th:class="escudo" src="/static/escudo.png" alt="logo UBU" width="296" height="89">
+    <img alt="logo UBU" height="89" src="/static/escudo.png" th:class="escudo" width="296">
 </header>
 <h1>
-  Lista de usuarios.</h1>
+    Lista de usuarios.</h1>
 <h2>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>id</th>
-        <th>nombre</th>
-        <th>apellidos</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr th:each="usuario : ${userList}">
-        <td th:text="${usuario.id}"></td>
-        <td th:text="${usuario.nombre}"></td>
-        <td th:text="${usuario.apellidos}"></td>
-      </tr>
-    </tbody>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>apellidos</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${userList}">
+            <td th:text="${usuario.id}"></td>
+            <td th:text="${usuario.nombre}"></td>
+            <td th:text="${usuario.apellidos}"></td>
+        </tr>
+        </tbody>
 
-  </table>
+    </table>
 </h2>
 <section>
-  <a href="home.html">Volver a la página inicial</a>
-  <link rel="stylesheet" href="/static/styles.css">
+    <a href="home.html">Volver a la página inicial</a>
+    <link href="/static/styles.css" rel="stylesheet">
 </section>
 <footer>
-  Contacto : Fernando Arroyo Redondo
-  <p>email: far0006@alu.ubu.es</p>
-  <link rel="stylesheet" href="/static/styles.css">
+    Contacto : Fernando Arroyo Redondo
+    <p>email: far0006@alu.ubu.es</p>
+    <link href="/static/styles.css" rel="stylesheet">
 </footer>
 </body>
 </html>
