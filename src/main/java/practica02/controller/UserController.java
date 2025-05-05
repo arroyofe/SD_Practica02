@@ -106,7 +106,7 @@ public class UserController {
 
         model.addAttribute("userList", userList);
 
-        return "showUsers";
+        return "usuarios";
 
     }
 

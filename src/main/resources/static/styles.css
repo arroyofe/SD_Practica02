@@ -24,15 +24,114 @@ h1 {
 
 h2 {
 
-    margin: 10px;
+    text-align: center;
     font-size: large;
 
 }
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+:root{
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+    --veryLightGray: hsl(0, 0%, 95%);
+    --lightBlue :hsl(50, 2%, 50%);
 
-section {
-    margin: 10px;
-    font-size: large;
+}
+#main-container{
+    width: 325px;
+    margin: 87px auto 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+article{
+    width: 16.3%;
+    height: 150px;
+    padding: 2px;
+    align-items: center;
+
+}
+#login{
+    background-color: var(--brightOrange);
+}
+#registro{
+    background-color: var(--darkCyan);
+}
+#usuarios{
+    background-color: var(--veryDarkCyan);
+}
+#pokemon{
+    background-color: var(--lightBlue);
+}
+#python{
+    background-color: var(--brightOrange);
+}
+#casa{
+    background-color: var(--darkCyan);
+}
+
+#home{
+    background-color: var(--darkCyan);
+
+}
+
+
+img{
+    margin-bottom: 36px;
+}
+h2{
+    color: var(--veryLightGray);
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.4em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+p{
+    color: var(--transparentWhite);
+    line-height: 25px;
+    margin-left: 35px;
+    margin-bottom: 25px;
+}
+button{
+    width: 100px;
+    height: 40px;
+    margin-left: 35px;
+    padding: 15px;
+    border-style: none;
+    border-radius: 40px;
+    background-color: var(--veryLightGray);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+}
+
+button:hover{
+    cursor: pointer;
+    border: 2px solid var(--veryLightGray);
+}
+
+
+@media (min-width: 1707px){
+    #main-container{
+        width: 900px;
+        display: table-column;
+        margin-top: 17px;
+
+    }
+    article{
+        height: 300px;
+        float: left;
+        align-items: center;
+    }
+    p{
+
+        margin-bottom: 40px;
+    }
 }
 
 nav {
@@ -60,7 +159,7 @@ nav ul li a {
 
 footer {
     position: absolute;
-    bottom: 5px;
+    bottom: 45px;
     margin: 10px;
     font-size: small;
 }

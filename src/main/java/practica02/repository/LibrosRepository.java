@@ -2,19 +2,22 @@ package practica02.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import practica02.model.User;
+import practica02.model.Libros;
+
 
 import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface LibrosRepository extends JpaRepository<Libros, Long> {
 
-    List<User> id(long id);
+    List<Libros> id(long id);
 
     boolean existsById(Long id);
 
-    Optional<User> findById(Long id);
+    Optional<Libros> findById(Long id);
 
-    User save(User user);
+    Libros save(Libros libro);
+
+    List<Libros> FindAll();
 }
