@@ -19,5 +19,5 @@ public interface LibrosRepository extends JpaRepository<Libros, Long> {
 
     Libros save(Libros libro);
 
-    List<Libros> FindAll();
+    List<Libros> findAll();
 }

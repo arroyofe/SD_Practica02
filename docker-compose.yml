@@ -1,0 +1,46 @@
+services:
+  mysql:
+    image: mysql:8.0.2
+    container_name: mysql-container
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    ports:
+      - "${MYSQL_DOCKER_PORT_LOCAL}:${MYSQL_DOCKER_PORT}"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+    networks:
+      - app-network
+
+  springboot:
+    build: ./app
+    container_name: springboot-app
+    restart: on-failure
+    env_file: ./.env
+    ports:
+      - "${SPRING_LOCAL_PORT}:${SPRING_DOCKER_PORT}"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url": "jdbc:mysql://mysql:$MYSQL_DOCKER_PORT/$MYSQL_DATABASE?useSSL=false",
+        "spring.datasource.username": "$MYSQL_USER",
+        "spring.datasource.password": "$MYSQL_ROOT_PASSWORD",
+        "spring.datasource.driver-class-name": "com.mysql.cj.jdbc.Driver",
+        "spring.jpa.hibernate.ddl-auto": "create" ,
+        "spring.jpa.show-sql": "true",
+        "spring.docker.compose.enabled":"false"
+      }'
+    depends_on:
+      - mysql
+
+    networks:
+      - app-network
+
+volumes:
+  mysql_data:
+
+networks:
+  app-network:
+    driver: bridge
