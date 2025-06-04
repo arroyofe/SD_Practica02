@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http:/www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1,0" name="viewport">
+    <title>Registrar usuarios</title>
+    <!--Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <Style>
+        body {
+            background-color: beige;
+        }
+
+        .login-container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .create-form {
+            background: aquamarine;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .boton {
+            background-color: white;
+        / / Fondo color: black;
+        / / Texto border: azure;
+        / / borde
+        }
+    </Style>
+</head>
+<body>
+<header>
+    <img alt="logo UBU" height="89" src="/static/escudo.png" th:class="escudo" width="296">
+</header>
+<div class="container login-container">
+    <form class="create-form-form" method="post" th:action="@{/createUser}">
+        <h1 class="form-title">Registrar usuario</h1>
+
+        <div class="mb-3">
+            <label class="form-label" for="username">Usuario</label>
+            <input class="form-control" id="username" name="nombre" required type="text"/>
+
+
+            <label class="form-label" for="password">Clave</label>
+            <input class="form-control" id="password" name="clave" required type="password"/>
+
+
+        </div>
+
+        <button class="boton btn-block w-100" type="submit">Crear</button>
+
+
+    </form>
+</div>
+
+<section>
+    <a href="home.html">Volver a la página inicial</a>
+    <link href="/static/styles.css" rel="stylesheet">
+</section>
+<footer>
+    Contacto : Fernando Arroyo Redondo
+    <p>email: far0006@alu.ubu.es</p>
+    <link href="/static/styles.css" rel="stylesheet">
+</footer>
+</body>
+</html>

@@ -5,6 +5,7 @@ WORKDIR /app
 COPY .. .
 CMD mvn clean install
 CMD mvn spring-boot:run
-# RUN mvn clean install
-
+#RUN mvn clean install
 #CMD ["mvn", "spring-boot:run"]
+
+

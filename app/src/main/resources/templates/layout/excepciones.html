@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ES" xmlns:th="http:/www.thymeleaf.org">
+
+</html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1,0" name="viewport">
+    <title>Práctica de Sistemas Distribuidos</title>
+    <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body>
+<link href="/static/styles.css" rel="stylesheet">
+<header>
+    <img alt="logo UBU" height="89" src="/static/escudo.png" th:class="escudo" width="296">
+</header>
+<h1>
+    Excepciones.
+</h1>
+
+<section>
+    <h2>
+        Excepciones de apertura y de lectura de archivos
+    </h2>
+    <div th:if="${error}">
+        <p style="color:red;">[[${error}]] No se ha podido abrir el fichero</p>
+
+    </div>
+
+    <h2>
+        Excepciones de contenido de archivos
+    </h2>
+    <div th:if="${errorCode}">
+        <p style="color:red;">[[${errorCode}]] No se ha podido leer el fichero</p>
+
+    </div>
+
+
+</section>
+<section>
+    <nav>
+        <ul>
+            <li><a href="index.html">Ir a la página de opciones de este sitio</a></li>
+
+        </ul>
+    </nav>
+</section>
+<footer>
+    Contacto : Fernando Arroyo Redondo
+    <p>email: far0006@alu.ubu.es</p>
+    <link href="/static/styles.css" rel="stylesheet">
+</footer>
+</body>
+</html>
