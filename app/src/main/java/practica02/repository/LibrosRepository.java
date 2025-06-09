@@ -18,10 +18,4 @@ public interface LibrosRepository extends JpaRepository<Libros, Long> {
     Optional<Libros> findById(Long id);
 
     Libros save(Libros libro);
-
-<<<<<<< Updated upstream
-    List<Libros> findAll();
-=======
-  //List<Libros> findAll(); ya existe en Jpa Repository
->>>>>>> Stashed changes
 }

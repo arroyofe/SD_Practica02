@@ -3,5 +3,6 @@ WORKDIR /python-flask-app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["python","app.py"]
+ENTRYPOINT ["python","app.py"]
+CMD["--port","8880"]
 LABEL authors="Fernando"

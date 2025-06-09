@@ -5,13 +5,13 @@ services:
     restart: unless-stopped
     env_file: ./.env
     environment:
-      MYSQL_DATABASE: "${MYSQL_DATABASE}"
-      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+      - MYSQL_DATABASE:$MYSQL_DATABASE
+      - MYSQL_ROOT_PASSWORD:$MYSQL_ROOT_PASSWORD
     ports:
-      - "${MYSQL_DOCKER_PORT}"
+      - $MYSQL_DOCKER_PORT_LOCAL:$MYSQL_DOCKER_PORT
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./mysql:/docker-entrypoint-initdb.d
+      - ./mysql/bbdd.sql:/docker-entrypoint-initdb.d/data.sql
 
     networks:
       - app-network
